@@ -7,7 +7,6 @@
     <title>Desafio Latam - Intro JS</title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/fontawesome.min.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet" />
   </head>
   <body>
     <nav
@@ -65,19 +64,24 @@
         <div class="row">
           <div class="col"></div>
           <div class="col-8">
-            <form class="row g-3">
+            <form id="todo-form" class="row g-3">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"
                   >Task Name :</span
                 >
                 <input
+                  id="input-task"
                   type="text"
                   class="form-control"
                   placeholder="Task Name"
                   aria-label="Task Name"
                   aria-describedby="basic-addon1"
+                  maxlength="60"
+                  required
                 />
-                <button type="button" class="btn btn-primary">+</button>
+                <button id="add-task" type="button" class="btn btn-primary">
+                  +
+                </button>
               </div>
             </form>
           </div>
@@ -89,14 +93,14 @@
           <div class="col"></div>
           <div class="col-2">
             <div class="card" style="height: 130px">
-              <div class="card-body">Summary</div>
+              <div class="card-body"><strong>Summary</strong></div>
               <p class="card-text text-start" style="margin: 6px">
-                OK:
-                <span id="ok-tasks">0</span>
+                Total:
+                <span><strong id="total-tasks">0</strong></span>
               </p>
               <p class="card-text text-start" style="margin: 6px">
-                Pending:
-                <span id="pending-tasks">0</span>
+                finished:
+                <span><strong id="finished-tasks">0</strong></span>
               </p>
             </div>
           </div>
@@ -104,24 +108,13 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Task Name</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Options</th>
+                  <th scope="col-1">#</th>
+                  <th scope="col-2 text-start">Task Name</th>
+                  <th scope="col-2">Status</th>
+                  <th scope="col-1">Options</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Hacer mercado</td>
-                  <td>
-                    <i class="fa fa-circle-check" style="color: #74c0fc"></i>
-                  </td>
-                  <td>
-                    <i class="fa-regular fa-trash-can" style="color: red"></i>
-                  </td>
-                </tr>
-              </tbody>
+              <tbody id="todo-table"></tbody>
             </table>
           </div>
           <div class="col"></div>
@@ -139,5 +132,6 @@
     </footer>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/fontawesome.min.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

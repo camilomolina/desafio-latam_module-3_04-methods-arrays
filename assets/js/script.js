@@ -24,6 +24,7 @@ document.querySelector("#add-task").addEventListener("click", function () {
     addTaskToTable();
 
     document.querySelector("#input-task").value = "";
+    document.querySelector("#input-task").focus();
   }
 });
 
